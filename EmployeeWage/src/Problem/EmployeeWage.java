@@ -1,19 +1,13 @@
 package Problem;
 
 public class EmployeeWage {
-	int totalEmpHrs, totalEmpWage, totalWorkingDays;
-	public static final int Is_Part_Time =1;
-	public static final int Is_Full_Time =2;
-	public static final int Emp_Rate_Per_Hour = 20;
-	public static final int Num_of_Working_Days= 20;
-	public static final int Max_Hrs_In_Month = 100;
-	//Constructor
-	EmployeeWage(){
-		int totalEmpHrs = 0, totalEmpWage = 0, totalWorkingDays = 0;
-	}
 	
-	public  int Calculate_Wage()
-	{
+	public  int Calculate_Wage(int Emp_Rate_Per_Hour, int Num_of_Working_Days, int Max_Hrs_In_Month)
+	{   
+		final int Is_Part_Time = 1;
+	    final int Is_Full_Time = 2;
+	    
+		int totalEmpHrs = 0, totalEmpWage = 0, totalWorkingDays = 0;
 		while( totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_of_Working_Days)
 		{	int empHrs =0 ;
 			totalWorkingDays++;
@@ -38,6 +32,7 @@ public class EmployeeWage {
 	public static void main(String[] args)
 	{	
 	EmployeeWage obj = new EmployeeWage();
-	System.out.println("Total Emp Wage:"+obj.Calculate_Wage());
+	System.out.println("Total Emp Wage Company_1:"+obj.Calculate_Wage(20, 20, 100));
+	System.out.println("Total Emp Wage Company_2:"+obj.Calculate_Wage(10, 2, 10));
 }
 }
