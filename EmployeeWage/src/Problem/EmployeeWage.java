@@ -10,14 +10,11 @@ public static void main(String[] args)
 		int EMP_RATE_PER_HOUR =20;
 		final int IS_PART_TIME=2;
 		final int NUM_OF_WORKING_DAYS = 20;
-		int Max_Hrs_In_Month=100;
 		//Computation
-		int totalEmpHrs=0;
-		int totalWorkingDays=0;
-		int totalEmpWage=0;
-		while(totalEmpHrs<=Max_Hrs_In_Month && totalWorkingDays<NUM_OF_WORKING_DAYS){
 		int empHrs=0;
-		totalWorkingDays++;
+		int empWage=0;
+		int totalEmpWage=0;
+		for(int day =0;day<NUM_OF_WORKING_DAYS;day++){
 		int empCheck =(int) Math.floor(Math.random()*10)%3;
 		if(empCheck == IS_FULL_TIME || empCheck == IS_PART_TIME)
 			System.out.println("Employee is Present");
@@ -33,8 +30,7 @@ public static void main(String[] args)
 		default:
 			empHrs=0;
 		}
-		totalEmpHrs+=empHrs;
-		int empWage = empHrs * EMP_RATE_PER_HOUR;
+		empWage = empHrs * EMP_RATE_PER_HOUR;
 		totalEmpWage+=empWage;
 		System.out.println("Emp Wage:"+empWage);
 }
