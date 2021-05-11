@@ -7,7 +7,7 @@ public class EmployeeWage {
 	public static final int Emp_Rate_Per_Hour = 20;
 	public static final int Num_of_Working_Days= 20;
 	public static final int Max_Hrs_In_Month = 100;
-	
+	//Constructor
 	EmployeeWage(){
 		int totalEmpHrs = 0, totalEmpWage = 0, totalWorkingDays = 0;
 	}
