@@ -31,6 +31,7 @@ public class EmployeeWage {
 	}
 	public static void main(String[] args)
 	{	
+	System.out.println("Welcome to Employee Wage Computation");
 	EmployeeWage obj = new EmployeeWage();
 	System.out.println("Total Emp Wage Company_1:"+obj.Calculate_Wage(20, 20, 100));
 	System.out.println("Total Emp Wage Company_2:"+obj.Calculate_Wage(10, 2, 10));
