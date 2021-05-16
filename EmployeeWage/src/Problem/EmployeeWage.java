@@ -1,12 +1,21 @@
 package Problem;
 
 public class EmployeeWage {
-	
-	public  int Calculate_Wage(int Emp_Rate_Per_Hour, int Num_of_Working_Days, int Max_Hrs_In_Month)
-	{   
-		final int Is_Part_Time = 1;
-	    final int Is_Full_Time = 2;
-	    
+	public static final int Is_Part_Time = 1;
+    public static final int Is_Full_Time = 2;
+	final int Emp_Rate_Per_Hour;
+	final int Num_of_Working_Days;
+	final int Max_Hrs_In_Month;
+	//Constructor 
+	public EmployeeWage(int Emp_Rate_Per_Hour,int Num_of_Working_Days, int Max_Hrs_In_Month) {
+		this.Emp_Rate_Per_Hour = Emp_Rate_Per_Hour;
+		this.Num_of_Working_Days=Num_of_Working_Days;
+		this.Max_Hrs_In_Month = Max_Hrs_In_Month;
+		
+	}
+	//Method
+	public int Calculate_Wage()
+	{   	
 		int totalEmpHrs = 0, totalEmpWage = 0, totalWorkingDays = 0;
 		while( totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_of_Working_Days)
 		{	int empHrs =0 ;
@@ -31,9 +40,11 @@ public class EmployeeWage {
 	}
 	public static void main(String[] args)
 	{	
+
 	System.out.println("Welcome to Employee Wage Computation");
-	EmployeeWage obj = new EmployeeWage();
-	System.out.println("Total Emp Wage Company_1:"+obj.Calculate_Wage(20, 20, 100));
-	System.out.println("Total Emp Wage Company_2:"+obj.Calculate_Wage(10, 2, 10));
+	EmployeeWage Compony_1 = new EmployeeWage(20, 20, 100);
+	EmployeeWage Compony_2 = new EmployeeWage(10, 2, 10);
+	System.out.println("Total Emp Wage Company_1:"+Compony_1.Calculate_Wage());
+	System.out.println("Total Emp Wage Company_2:"+Compony_2.Calculate_Wage());
 }
 }
