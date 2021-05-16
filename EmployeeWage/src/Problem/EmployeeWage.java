@@ -1,13 +1,12 @@
 package Problem;
 
-import java.util.ArrayList;
-
 public class EmployeeWage {
 	public static final int Is_Part_Time = 1;
     public static final int Is_Full_Time = 2;
 	final int Emp_Rate_Per_Hour;
 	final int Num_of_Working_Days;
 	final int Max_Hrs_In_Month;
+	private int totalEmpWage;
 	//Constructor 
 	public EmployeeWage(int Emp_Rate_Per_Hour,int Num_of_Working_Days, int Max_Hrs_In_Month) {
 		this.Emp_Rate_Per_Hour = Emp_Rate_Per_Hour;
@@ -15,8 +14,9 @@ public class EmployeeWage {
 		this.Max_Hrs_In_Month = Max_Hrs_In_Month;
 		
 	}
+
 	//Method
-	public int Calculate_Wage()
+	public void  Calculate_Wage()
 	{   	
 		int totalEmpHrs = 0, totalEmpWage = 0, totalWorkingDays = 0;
 		while( totalEmpHrs <= Max_Hrs_In_Month && totalWorkingDays < Num_of_Working_Days)
@@ -36,21 +36,26 @@ public class EmployeeWage {
 		totalEmpHrs += empHrs;
 		int empWage = empHrs * Emp_Rate_Per_Hour;
 		totalEmpWage += empWage;
-		System.out.println("Emp Wage :" + empWage );
+		System.out.println("Day#: " + totalWorkingDays + "EMp Hr:" + empHrs);
 	}
-		return totalEmpWage;
+		totalEmpWage = totalEmpHrs + Emp_Rate_Per_Hour;
 	}
+	@Override
+	public String toString() {
+		return "Total Emp Wage for Company is: " + totalEmpWage;
+		}
+	
 	public static void main(String[] args)
 	{	
 
 	System.out.println("Welcome to Employee Wage Computation");
-	EmployeeWage Compony_1 = new EmployeeWage(20, 20, 100);
-	EmployeeWage Compony_2 = new EmployeeWage(10, 2, 10);
-	ArrayList<Integer> list = new ArrayList<Integer>();
-	list.add(Compony_1.Calculate_Wage());
-	list.add(Compony_2.Calculate_Wage());
-	System.out.println("Total Emp Wage Company_1:"+Compony_1.Calculate_Wage());
-	System.out.println("Total Emp Wage Company_2:"+Compony_2.Calculate_Wage());
-	System.out.println("Total Wages of Each Company"+list);
+	
+	EmployeeWage Company_1 = new EmployeeWage(20 ,2, 10);
+	EmployeeWage Company_2 = new EmployeeWage(10 , 4, 20);
+	Company_1.Calculate_Wage();
+	System.out.println(Company_1);
+	Company_2.Calculate_Wage();
+	System.out.println(Company_2);
+	
 }
 }
