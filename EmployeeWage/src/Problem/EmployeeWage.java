@@ -1,5 +1,7 @@
 package Problem;
 
+import java.util.ArrayList;
+
 public class EmployeeWage {
 	public static final int Is_Part_Time = 1;
     public static final int Is_Full_Time = 2;
@@ -44,7 +46,11 @@ public class EmployeeWage {
 	System.out.println("Welcome to Employee Wage Computation");
 	EmployeeWage Compony_1 = new EmployeeWage(20, 20, 100);
 	EmployeeWage Compony_2 = new EmployeeWage(10, 2, 10);
+	ArrayList<Integer> list = new ArrayList<Integer>();
+	list.add(Compony_1.Calculate_Wage());
+	list.add(Compony_2.Calculate_Wage());
 	System.out.println("Total Emp Wage Company_1:"+Compony_1.Calculate_Wage());
 	System.out.println("Total Emp Wage Company_2:"+Compony_2.Calculate_Wage());
+	System.out.println("Total Wages of Each Company"+list);
 }
 }
